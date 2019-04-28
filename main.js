@@ -5,17 +5,17 @@ function signup(){
 	var con=document.getElementById("con").value;
 	var email=document.getElementById("email").value;
 	var pass=document.getElementById("pass").value;
-	 ref=database.ref('user/'+name);
-ref.once('value',function(snapshot){
+	
+database.ref('user/'+name).once('value',function(snapshot){
 	if(snapshot.exists())
-		alert("username alreasy taken");
+		alert("username already taken");
 	else
 		pushUser(name,con,email,pass);
 
 });
 }
 function pushUser(name, con, email, pass) {
-  ref.push({
+  database.ref('user/'+name).push({
     con: con,
     email: email,
     pass : pass
