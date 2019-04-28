@@ -1,7 +1,7 @@
 var database=firebase.database();
 
 function signup(){
-	var name=document.getElementById("name").value;
+	var name=document.getElementById("name1").value;
 	var con=document.getElementById("con").value;
 	var email=document.getElementById("email").value;
 	var pass=document.getElementById("pass").value;
