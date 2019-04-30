@@ -4,7 +4,7 @@ function signup(){
 	var name=document.getElementById("name1").value;
 	var con=document.getElementById("con").value;
 	var email=document.getElementById("email").value;
-	var pass=document.getElementById("pass").value;
+	var pass=document.getElementById("pass1").value;
 	
 database.ref('user/'+name).once('value',function(snapshot){
 	if(snapshot.exists())
@@ -41,3 +41,14 @@ ref.once('value',function(snapshot){
 
 });
 }
+function myFunction() {
+  var x = document.getElementById("pass1");
+  var y = document.getElementById("pass");
+  if (x.type === "password"||y.type === "password") {
+    x.type = "text";
+    y.type = "text";
+  } else {
+    x.type = "password";
+    y.type = "password";
+  }
+} 
